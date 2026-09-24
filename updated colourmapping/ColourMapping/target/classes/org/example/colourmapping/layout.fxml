@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<BorderPane prefHeight="791.0" prefWidth="938.0"
+            style="-fx-background-image: url('https://i.imgur.com/5TgHHY1.jpg'); -fx-background-size: cover;"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.colourmapping.GameController">
+
+    <left>
+        <VBox prefWidth="260" spacing="12" style="-fx-background-color: #202040;">
+            <padding>
+                <Insets bottom="20" left="15" right="15" top="20" />
+            </padding>
+
+            <Label style="-fx-text-fill: #ffffff; -fx-font-size: 20px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #7cfcff, 8, 0.2, 0, 0);" text="🧑 Team Members" />
+
+            <!-- Player Status Cards -->
+            <VBox spacing="10">
+                <TitledPane expanded="true" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-background-color: #2a2a44;" text="Player 1">
+                    <VBox spacing="6" style="-fx-background-color: #2f2f4f;">
+                        <padding><Insets bottom="6" left="6" right="6" top="6" /></padding>
+                        <Label fx:id="player1Moves" style="-fx-text-fill: #ffffff;" text="Moves: 0" />
+                        <Label fx:id="player1Time" style="-fx-text-fill: #ffffff;" text="Time: 00:00" />
+                        <Label fx:id="player1Status" style="-fx-text-fill: #00ff88; -fx-font-weight: bold;" text="Status: Ready" />
+                    </VBox>
+                </TitledPane>
+
+                <TitledPane expanded="true" style="-fx-text-fill: white; -fx-background-color: #2a2a44;" text="Player 2">
+                    <VBox spacing="6" style="-fx-background-color: #2f2f4f;">
+                        <padding><Insets bottom="6" left="6" right="6" top="6" /></padding>
+                        <Label fx:id="player2Moves" style="-fx-text-fill: #ffffff;" text="Moves: 0" />
+                        <Label fx:id="player2Time" style="-fx-text-fill: #ffffff;" text="Time: 00:00" />
+                        <Label fx:id="player2Status" style="-fx-text-fill: #ffcc00; -fx-font-weight: bold;" text="Status: Waiting" />
+                    </VBox>
+                </TitledPane>
+
+                <TitledPane expanded="true" style="-fx-text-fill: white; -fx-background-color: #2a2a44;" text="Player 3">
+                    <VBox spacing="6" style="-fx-background-color: #2f2f4f;">
+                        <padding><Insets bottom="6" left="6" right="6" top="6" /></padding>
+                        <Label fx:id="player3Moves" style="-fx-text-fill: #ffffff;" text="Moves: 0" />
+                        <Label fx:id="player3Time" style="-fx-text-fill: #ffffff;" text="Time: 00:00" />
+                        <Label fx:id="player3Status" style="-fx-text-fill: #ff4444; -fx-font-weight: bold;" text="Status: Offline" />
+                    </VBox>
+                </TitledPane>
+            </VBox>
+
+            <!-- Message Area -->
+            <Label style="-fx-text-fill: #ffffff; -fx-font-size: 18px; -fx-padding: 10 0 0 0; -fx-effect: dropshadow(gaussian, #00ffff, 6, 0.2, 0, 0);" text="💬 Team Chat" />
+            <ScrollPane fitToWidth="true" prefHeight="200" style="-fx-background: #1e1e2e;">
+                <VBox fx:id="chatBox" spacing="6" style="-fx-background-color: #333355;">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+                    <Label style="-fx-text-fill: #ffffff;" text="Player1: Let's go!" wrapText="true" />
+                    <Label style="-fx-text-fill: #ffffff;" text="Player2: Ready!" wrapText="true" />
+                </VBox>
+            </ScrollPane>
+
+            <!-- Chat Input Area -->
+            <HBox spacing="8" style="-fx-padding: 10 0 0 0;">
+                <TextField fx:id="chatInputField" promptText="Type your message..." style="-fx-background-color: #2f2f4f; -fx-text-fill: white;" HBox.hgrow="ALWAYS" />
+                <Button fx:id="sendButton" text="Send" style="-fx-background-color: #2a2a44; -fx-text-fill: white;" />
+            </HBox>
+        </VBox>
+    </left>
+
+    <center>
+        <Pane fx:id="puzzleArea" prefHeight="600.0" prefWidth="600.0"
+              style="-fx-background-color: #e2c29d; -fx-border-color: #8b5e3c; -fx-border-width: 4;" />
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #202040; -fx-padding: 15;">
+            <HBox spacing="30">
+                <!-- Game Rules -->
+                <VBox prefWidth="300" spacing="10"
+                      style="-fx-background-color: #2f2f4f; -fx-border-color: #5c3d1e; -fx-border-width: 2; -fx-padding: 10;">
+                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 20px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #7cfcff, 8, 0.2, 0, 0);" text="Game Rules" />
+                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px;" text="1. Select a color using the dropdown below" />
+                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px;" text="2. Click a cell to apply that color" />
+                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px;" text="3. No adjacent cells can have the same color" />
+                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px;" text="4. Complete the grid without rule violations" />
+                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 14px;" text="5. Solve in the fewest moves" />
+                </VBox>
+
+                <!-- Color Selector -->
+                <VBox spacing="10" style="-fx-background-color: #2f2f4f; -fx-border-color: #5c3d1e; -fx-border-width: 2; -fx-padding: 10;">
+                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 18px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #7cfcff, 8, 0.2, 0, 0);" text="Select Color" />
+                    <ComboBox fx:id="colorSelector" prefWidth="200" style="-fx-background-color: #2a2a44; -fx-text-fill: white;" />
+                </VBox>
+
+                <!-- Game Info -->
+                <VBox spacing="10" style="-fx-background-color: #2f2f4f; -fx-border-color: #5c3d1e; -fx-border-width: 2; -fx-padding: 10;">
+                    <Label style="-fx-text-fill: #ffffff; -fx-font-size: 18px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #7cfcff, 8, 0.2, 0, 0);" text="Game Info" />
+                    <Label fx:id="targetColorLabel" style="-fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-weight: bold;" text="Target: " />
+                    <Label fx:id="timerLabel" style="-fx-text-fill: #ffffff;" text="Time: 00:00" />
+                    <Label fx:id="moveCounterLabel" style="-fx-text-fill: #ffffff;" text="Moves: 0" />
+                    <Label fx:id="tipCounterLabel" style="-fx-text-fill: #ffffff;" text="Tips Used: 0" />
+                    <Label fx:id="bestTimeLabel" style="-fx-text-fill: #ffffff;" text="Best Time: --:--" />
+                    <Button fx:id="tipButton" onAction="#handleTip" style="-fx-background-color: #2a2a44; -fx-text-fill: white;" text="Show Tip" />
+                </VBox>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

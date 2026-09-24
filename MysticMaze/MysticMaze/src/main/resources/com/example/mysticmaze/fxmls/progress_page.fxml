@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.effect.Glow?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f5f1e1;">
+    <VBox spacing="20" alignment="TOP_CENTER" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+
+        <!-- Title -->
+        <Label text="Player Info (Team 1)" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: darkblue;"/>
+
+        <!-- Players Grid -->
+        <HBox spacing="30" alignment="CENTER">
+
+            <!-- Player Card -->
+            <VBox spacing="10" alignment="TOP_CENTER" style="-fx-background-color: #fff8dc; -fx-padding: 15; -fx-border-color: #8b5a2b; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+                <Label text="Monser" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+<!--                <ImageView fitHeight="80" fitWidth="80">-->
+<!--                    <Image url="@avatar.png"/>-->
+<!--                </ImageView>-->
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.6" prefWidth="100" style="-fx-accent: orange;"/>
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.4" prefWidth="100" style="-fx-accent: orange;"/>
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.8" prefWidth="100" style="-fx-accent: orange;"/>
+            </VBox>
+
+            <!-- Repeat for other players -->
+            <VBox spacing="10" alignment="TOP_CENTER" style="-fx-background-color: #fff8dc; -fx-padding: 15; -fx-border-color: #8b5a2b; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+                <Label text="Selim" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+<!--                <ImageView fitHeight="80" fitWidth="80">-->
+<!--                    //<Image url="@avatar.png"/>-->
+<!--                </ImageView>-->
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.7" prefWidth="100" style="-fx-accent: orange;"/>
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.5" prefWidth="100" style="-fx-accent: orange;"/>
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.9" prefWidth="100" style="-fx-accent: orange;"/>
+            </VBox>
+
+            <VBox spacing="10" alignment="TOP_CENTER" style="-fx-background-color: #fff8dc; -fx-padding: 15; -fx-border-color: #8b5a2b; -fx-border-width: 2; -fx-border-radius: 10; -fx-background-radius: 10;">
+                <Label text="Tanvir" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+<!--                <ImageView fitHeight="80" fitWidth="80">-->
+<!--                    <Image url="@avatar.png"/>-->
+<!--                </ImageView>-->
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.5" prefWidth="100" style="-fx-accent: orange;"/>
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.6" prefWidth="100" style="-fx-accent: orange;"/>
+                <Label text="Total Solve: 10"/>
+                <ProgressBar progress="0.8" prefWidth="100" style="-fx-accent: orange;"/>
+            </VBox>
+        </HBox>
+
+
+    </VBox>
+</AnchorPane>

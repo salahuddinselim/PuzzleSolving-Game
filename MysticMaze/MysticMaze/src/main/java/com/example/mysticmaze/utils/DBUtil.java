@@ -1,5 +1,7 @@
 package com.example.mysticmaze.utils;
 
+import com.example.mysticmaze.models.Message;
+import com.example.mysticmaze.models.Puzzle;
 import com.example.mysticmaze.models.User;
 
 import java.nio.charset.StandardCharsets;
@@ -49,7 +51,7 @@ public class DBUtil {
     }
 
     public static boolean validateUser(String username, String rawPassword) {
-        String query = "SELECT password_hash FROM users WHERE username = ?";
+        String query = "SELECT user_id, password_hash FROM users WHERE username = ?";
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -89,6 +91,91 @@ public class DBUtil {
         return hexString.toString();
 
     }
+
+    public static boolean getCurrentUserRoom(int userId) throws SQLException {
+        String sql = "SELECT rm.room_id FROM room_members rm " +
+                "WHERE rm.user_id = ? AND rm.status = 'active'";
+
+        try (PreparedStatement stmt = DBUtil.getConnection().prepareStatement(sql)) {
+            stmt.setInt(1, userId);
+            ResultSet rs = stmt.executeQuery();
+            //int id  = rs.next();  // true if at least one active room is found
+            return  rs.next();
+        }
+    }
+
+
+    // puzzle related
+    public static Puzzle getTowerOfHanoiPuzzle() {
+        String query = "SELECT * FROM puzzles WHERE type = 'visual'";
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            ResultSet rs = stmt.executeQuery();
+            //System.out.println(rs);
+
+            if (rs.next()) {
+                String puzzleData = rs.getString("puzzle_data");
+                // level, type, puzzle_data,solution, minimum_moves, minimum_time_taken, difficulty
+
+              //  System.out.println("id : "+rs.getInt("puzzle_id"));
+               // System.out.println("level : "+rs.getInt("level"));
+                //System.out.println("type "+  rs.getString("type"));
+                //System.out.println(rs.getString("puzzle_data"));
+                //System.out.println(rs.getString("solution"));
+                //System.out.println(rs.getInt("minimum_moves"));
+                //System.out.println(rs.getFloat("minimum_time_taken"));
+                //System.out.println(rs.getString("difficulty"));
+
+                return new Puzzle(
+                        rs.getInt("puzzle_id"),
+                        rs.getInt("level"),
+                        rs.getString("type"),
+                        rs.getString("puzzle_data"),
+                        rs.getString("solution"),
+                        rs.getInt("minimum_moves"),
+                        rs.getInt("minimum_time_taken"),
+                        rs.getString("difficulty")
+                );
+            }
+
+        } catch (SQLException  e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static boolean isUserInActiveRoom(int userId) throws SQLException {
+        String sql = "SELECT rm.room_id FROM room_members rm " +
+                "JOIN rooms r ON rm.room_id = r.room_id " +
+                "WHERE rm.user_id = ? AND rm.status = 'active'";
+
+        try (PreparedStatement stmt = DBUtil.getConnection().prepareStatement(sql)) {
+            stmt.setInt(1, userId);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();  // true if at least one active room is found
+        }
+    }
+
+     public static void insertRoomMessage(Message message) {
+            String sql = "INSERT INTO messages (room_id, sender_id, message, type) VALUES (?, ?, ?, ?)";
+
+            try (Connection conn = DBUtil.getConnection();
+                 PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+                System.out.print(message.getRoomId());
+
+                stmt.setInt(1, message.getRoomId());
+                stmt.setInt(2, message.getSenderId());
+                stmt.setString(3, message.getMessage());
+                stmt.setString(4, message.getType());
+
+                stmt.executeUpdate();
+           } catch (SQLException e) {
+                e.printStackTrace();
+           }
+        }
+
 
 
 }

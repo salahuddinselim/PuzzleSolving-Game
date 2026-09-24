@@ -29,16 +29,35 @@ public class RegisterPageController {
     @FXML private PasswordField confirmPasswordField;
     @FXML private CheckBox termsCheckbox;
 
+    private String previousPageFXML = "/com/example/mysticmaze/fxmls/HomePage.fxml"; // ← set the previous page here
+
     @FXML
-    private void handleBack(ActionEvent event) {
-        try {
-            Parent loginRoot = FXMLLoader.load(getClass().getResource("com/example/mysticmaze/fxmls/HomePage.fxml"));
-            Scene loginScene = new Scene(loginRoot);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(loginScene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void goToNext(ActionEvent event) throws IOException {
+        // Set current page as previous before navigating
+        previousPageFXML = "/com/example/mysticmaze/fxmls/ThisPage.fxml"; // ← set current FXML file name
+
+        Parent nextRoot = FXMLLoader.load(getClass().getResource("/com/example/mysticmaze/fxmls/NextPage.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(nextRoot));
+    }
+
+    @FXML
+    private void handleBack(ActionEvent event) throws IOException {
+        Parent backRoot = FXMLLoader.load(getClass().getResource(previousPageFXML));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(backRoot));
+    }
+
+    public void LoginPage(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/mysticmaze/fxmls/loginPage.fxml"));
+
+        System.out.println(fxmlLoader);
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        stage.setTitle("Puzzle solver");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -63,7 +82,7 @@ public class RegisterPageController {
 
         DBUtil.insertUser(newUser);
         showAlert("Registration successful!");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/mysticmaze/fxmls/DashboardPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/mysticmaze/fxmls/loginPage.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -92,5 +111,6 @@ public class RegisterPageController {
         alert.setContentText(message);
         alert.show();
     }
+
 
 }

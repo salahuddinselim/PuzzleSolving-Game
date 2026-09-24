@@ -4,13 +4,16 @@ import javafx.animation.Animation;
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -29,6 +32,8 @@ public class GiftBoxController implements Initializable {
 
     @FXML
     private Button backButton;
+    @FXML
+    private Label rewardMessageLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -57,21 +62,27 @@ public class GiftBoxController implements Initializable {
     }
 
     @FXML
-    private void handleClaimReward(javafx.event.ActionEvent event) {
-        // You can replace this with your reward logic
-        System.out.println("🎁 Reward claimed!");
+    private void handleClaimReward(ActionEvent event) {
+        rewardMessageLabel.setVisible(true); // Show the label when reward is claimed
+    }
+
+    private String previousPageFXML = "/com/example/mysticmaze/fxmls/HomePage.fxml"; // ← set the previous page here
+
+    @FXML
+    private void goToNext(ActionEvent event) throws IOException {
+        // Set current page as previous before navigating
+        previousPageFXML = "/com/example/mysticmaze/fxmls/ThisPage.fxml"; // ← set current FXML file name
+
+        Parent nextRoot = FXMLLoader.load(getClass().getResource("/com/example/mysticmaze/fxmls/NextPage.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(nextRoot));
     }
 
     @FXML
-    private void handleBack(javafx.event.ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/mysticmaze/views/MainMenu.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void handleBack(ActionEvent event) throws IOException {
+        Parent backRoot = FXMLLoader.load(getClass().getResource(previousPageFXML));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(backRoot));
     }
+
 }

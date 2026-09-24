@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.JigsawController">
+    <top>
+        <HBox spacing="10">
+            <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+            <Label fx:id="moveCounter" text="Moves: 0" />
+            <Label fx:id="tipCounter" text="Tips Used: 0" />
+            <Label fx:id="timerLabel" text="Time: 00:00" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="tipButton" onAction="#handleShowTip" text="Show Tip" />
+            <ComboBox fx:id="sizeSelector" onAction="#handleSizeChange" promptText="Select size (e.g., 3x3)" />
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <Pane fx:id="puzzlePane" prefHeight="561.0" prefWidth="450.0" style="-fx-border-color: black;">
+            <children>
+                 <VBox layoutX="318.0" layoutY="392.0" prefHeight="155.0" prefWidth="210.0" spacing="10">
+                     <padding>
+                     <Insets bottom="10" left="10" right="10" top="10" />
+                  </padding>
+                 </VBox>
+            </children></Pane>
+        </ScrollPane>
+    </center>
+</BorderPane>

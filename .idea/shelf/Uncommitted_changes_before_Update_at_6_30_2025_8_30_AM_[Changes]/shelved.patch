@@ -1,0 +1,120 @@
+Index: MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/TohPage.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.ScrollPane?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.BorderPane?>\r\n<?import javafx.scene.layout.Pane?>\r\n<?import javafx.scene.layout.VBox?>\r\n\r\n<BorderPane xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.mysticmaze.controllers.TohController\">\r\n\r\n\r\n    <!-- CENTER: Game Area -->\r\n    <center>\r\n        <AnchorPane fx:id=\"gamePane\" prefHeight=\"600.0\" prefWidth=\"600.0\" style=\"-fx-background-color: lavender;\">\r\n            <Label fx:id=\"moveLabel\" layoutX=\"20\" layoutY=\"10\" style=\"-fx-font-size: 16;\" text=\"Moves: 0\" />\r\n            <Label fx:id=\"timerLabel\" layoutX=\"500\" layoutY=\"10\" style=\"-fx-font-size: 16;\" text=\"Time: 0s\" />\r\n\r\n            <!-- Rods -->\r\n            <Pane fx:id=\"rod1\" layoutX=\"50\" layoutY=\"50\" onMouseClicked=\"#onRodClicked\" prefHeight=\"350\" prefWidth=\"150\" />\r\n            <Pane fx:id=\"rod2\" layoutX=\"225\" layoutY=\"50\" onMouseClicked=\"#onRodClicked\" prefHeight=\"350\" prefWidth=\"150\" />\r\n            <Pane fx:id=\"rod3\" layoutX=\"400\" layoutY=\"50\" onMouseClicked=\"#onRodClicked\" prefHeight=\"350\" prefWidth=\"150\" />\r\n        </AnchorPane>\r\n    </center>\r\n\r\n    <bottom>\r\n        <VBox  style=\"-fx-background-color: #fff0f5; -fx-border-color: #ff69b4; -fx-border-width: 2;\">\r\n            <Label style=\"-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #8b008b;\" text=\"\uD83D\uDCDC Tower of Hanoi Rules\" />\r\n\r\n            <ScrollPane fitToWidth=\"true\"  style=\"-fx-background-color: transparent;\">\r\n                <VBox spacing=\"8\" style=\"-fx-background-color: #ffe6ff; -fx-padding: 10;\">\r\n                    <Label text=\"1. Only one disk can be moved at a time.\" wrapText=\"true\" />\r\n                    <Label text=\"2. Each move involves taking the top disk from one of the stacks and placing it on top of another stack.\" wrapText=\"true\" />\r\n                    <Label text=\"3. No larger disk may be placed on top of a smaller disk.\" wrapText=\"true\" />\r\n                    <Label text=\"4. Objective: Move the entire stack to another rod, obeying the rules.\" wrapText=\"true\" />\r\n                    <Label text=\"5. Minimum moves required: (2ⁿ - 1), where n is the number of disks.\" wrapText=\"true\" />\r\n                </VBox>\r\n            </ScrollPane>\r\n        </VBox>\r\n    </bottom>\r\n\r\n\r\n\r\n</BorderPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/TohPage.fxml b/MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/TohPage.fxml
+--- a/MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/TohPage.fxml	(revision 1672e048aff0ecd2605edc7cc1ed92e1c2f412a5)
++++ b/MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/TohPage.fxml	(date 1751234391020)
+@@ -7,7 +7,7 @@
+ <?import javafx.scene.layout.Pane?>
+ <?import javafx.scene.layout.VBox?>
+ 
+-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.TohController">
++<BorderPane prefHeight="582.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.TohController">
+ 
+ 
+     <!-- CENTER: Game Area -->
+@@ -24,10 +24,10 @@
+     </center>
+ 
+     <bottom>
+-        <VBox  style="-fx-background-color: #fff0f5; -fx-border-color: #ff69b4; -fx-border-width: 2;">
++        <VBox prefHeight="180.0" spacing="10" style="-fx-background-color: #fff0f5; -fx-border-color: #ff69b4; -fx-border-width: 2;">
+             <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #8b008b;" text="📜 Tower of Hanoi Rules" />
+ 
+-            <ScrollPane fitToWidth="true"  style="-fx-background-color: transparent;">
++            <ScrollPane fitToWidth="true" prefHeight="150.0" style="-fx-background-color: transparent;">
+                 <VBox spacing="8" style="-fx-background-color: #ffe6ff; -fx-padding: 10;">
+                     <Label text="1. Only one disk can be moved at a time." wrapText="true" />
+                     <Label text="2. Each move involves taking the top disk from one of the stacks and placing it on top of another stack." wrapText="true" />
+Index: MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/HelpPage.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<?import javafx.scene.effect.Glow?>\r\n<?import javafx.scene.control.Button?>\r\n<AnchorPane prefHeight=\"507.0\" prefWidth=\"749.0\" style=\"-fx-background-color: linear-gradient(to bottom, #1e0033, #3c0066);\" xmlns=\"http://javafx.com/javafx/23.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.mysticmaze.controllers.HelpController\">\r\n\r\n   <children>\r\n      <ImageView fitHeight=\"507.0\" fitWidth=\"807.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@../images/log.png\" />\r\n         </image>\r\n      </ImageView>\r\n\r\n\r\n      <Label layoutX=\"96.0\" layoutY=\"50.0\" prefHeight=\"38.0\" prefWidth=\"611.0\" style=\"-fx-font-size: 26px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #ff00ff, 8, 0.5, 0, 0);\" text=\"✨ Need Help? Let's Begin the Mystic Journey ✨\" textFill=\"#ffffff\">\r\n         <font>\r\n            <Font name=\"Papyrus\" size=\"26.0\" />\r\n         </font>\r\n      </Label>\r\n\r\n      <Label layoutX=\"133.0\" layoutY=\"150.0\" prefHeight=\"27.0\" prefWidth=\"562.0\" style=\"-fx-font-size: 18px;\" text=\"1. Register your name to mark your presence in the Mystic Maze.\" textFill=\"#ffd700\">\r\n         <font>\r\n            <Font name=\"Arial Rounded MT Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n\r\n      <Label layoutX=\"133.0\" layoutY=\"200.0\" prefHeight=\"27.0\" prefWidth=\"486.0\" style=\"-fx-font-size: 18px;\" text=\"2. Login to your account and unlock your player profile.\" textFill=\"#00ffcc\">\r\n         <font>\r\n            <Font name=\"Arial Rounded MT Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n\r\n      <Label layoutX=\"130.0\" layoutY=\"250.0\" prefHeight=\"27.0\" prefWidth=\"505.0\" style=\"-fx-font-size: 18px;\" text=\"3. Join a team — because riddles are more fun with allies!\" textFill=\"#ff69b4\">\r\n         <font>\r\n            <Font name=\"Arial Rounded MT Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n\r\n      <Label layoutX=\"130.0\" layoutY=\"300.0\" prefHeight=\"27.0\" prefWidth=\"555.0\" style=\"-fx-font-size: 18px;\" text=\"4. Begin the journey and unveil the secrets hidden in the maze...\" textFill=\"#90ee90\">\r\n         <font>\r\n            <Font name=\"Arial Rounded MT Bold\" size=\"18.0\" />\r\n         </font>\r\n      </Label>\r\n\r\n      <Label layoutX=\"246.0\" layoutY=\"400.0\" prefHeight=\"32.0\" prefWidth=\"285.0\" style=\"-fx-font-size: 22px; -fx-font-style: italic;\" text=\"Mystic Maze Awaits You... ✨\" textFill=\"#ffffff\">\r\n         <font>\r\n            <Font name=\"Georgia\" size=\"22.0\" />\r\n         </font>\r\n      </Label>\r\n   </children>\r\n   <!-- Back Button with Glowy Design -->\r\n   <Button layoutX=\"51.0\" layoutY=\"72.0\" onAction=\"#handleBack\"\r\n           text=\"← Return\"\r\n           style=\"\r\n            -fx-background-color: rgba(255, 255, 255, 0.08);\r\n            -fx-text-fill: #ffffff;\r\n            -fx-font-size: 16;\r\n            -fx-font-weight: bold;\r\n            -fx-padding: 8 16;\r\n            -fx-background-radius: 10;\r\n            -fx-cursor: hand;\r\n            -fx-effect: dropshadow(gaussian, #ffffffAA, 10, 0.5, 0, 0);\">\r\n      <effect>\r\n         <Glow level=\"0.6\" />\r\n      </effect>\r\n   </Button>\r\n\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/HelpPage.fxml b/MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/HelpPage.fxml
+--- a/MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/HelpPage.fxml	(revision 1672e048aff0ecd2605edc7cc1ed92e1c2f412a5)
++++ b/MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/fxmls/HelpPage.fxml	(date 1751234407287)
+@@ -1,13 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.text.Font?>
+-
+-<?import javafx.scene.effect.Glow?>
+ <?import javafx.scene.control.Button?>
++<?import javafx.scene.effect.Glow?>
++<?import javafx.scene.layout.AnchorPane?>
++
+ <AnchorPane prefHeight="507.0" prefWidth="749.0" style="-fx-background-color: linear-gradient(to bottom, #1e0033, #3c0066);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.HelpController">
+ 
+    <children>
+@@ -55,17 +51,7 @@
+       </Label>
+    </children>
+    <!-- Back Button with Glowy Design -->
+-   <Button layoutX="51.0" layoutY="72.0" onAction="#handleBack"
+-           text="← Return"
+-           style="
+-            -fx-background-color: rgba(255, 255, 255, 0.08);
+-            -fx-text-fill: #ffffff;
+-            -fx-font-size: 16;
+-            -fx-font-weight: bold;
+-            -fx-padding: 8 16;
+-            -fx-background-radius: 10;
+-            -fx-cursor: hand;
+-            -fx-effect: dropshadow(gaussian, #ffffffAA, 10, 0.5, 0, 0);">
++   <Button layoutX="51.0" layoutY="72.0" onAction="#handleBack" style="             -fx-background-color: rgba(255, 255, 255, 0.08);             -fx-text-fill: #ffffff;             -fx-font-size: 16;             -fx-font-weight: bold;             -fx-padding: 8 16;             -fx-background-radius: 10;             -fx-cursor: hand;             -fx-effect: dropshadow(gaussian, #ffffffAA, 10, 0.5, 0, 0);" text="← Return">
+       <effect>
+          <Glow level="0.6" />
+       </effect>
+Index: MysticMaze/MysticMaze/src/main/java/com/example/mysticmaze/controllers/DashboardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.mysticmaze.controllers;\r\n\r\nimport com.example.mysticmaze.utils.DBUtil;\r\nimport com.example.mysticmaze.utils.Session;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\nimport java.sql.PreparedStatement;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\r\nimport static com.example.mysticmaze.utils.DBUtil.getCurrentUserRoom;\r\n\r\npublic class DashboardController {\r\n\r\n    @FXML\r\n    private Button welcomeLabel;\r\n    @FXML\r\n    public void initialize() {\r\n        String username = Session.getUserName();\r\n        if (username != null) {\r\n            welcomeLabel.setText(\"Welcome, \" + username);\r\n        } else {\r\n            welcomeLabel.setText(\"Welcome!\");\r\n        }\r\n    }\r\n    @FXML\r\n    private void handleLogout(ActionEvent event) throws IOException {\r\n        Session.clear(); // clears session data\r\n\r\n        FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/com/example/mysticmaze/fxmls/loginPage.fxml\"));\r\n        Parent root = loader.load();\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setScene(new Scene(root));\r\n        stage.setTitle(\"Login - Mystic Maze\");\r\n    }\r\n\r\n    public void CreateTeam(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/createRoom.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"Create a Team\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    public void JoinTeam(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/joinTeam.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"Join A Team\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    public void AboutUs(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/aboutUsPage.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"About Us\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    public void LeaderBoard(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/LeaderBoardPage.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"Leader Board\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    public void Help(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/HelpPage.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"Help\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    public void ProfilePage(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/ProfilePage.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"Profile\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    public void Player(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/PlayerPage.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"Player\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    public void GiftBox(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/GiftBoxPage.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"Gift Box\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    public void Level(ActionEvent event) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/LevelPage.fxml\"));\r\n        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n        stage.setResizable(false);\r\n        stage.setTitle(\"Level\");\r\n        stage.setScene(new Scene(root));\r\n        stage.show();\r\n    }\r\n\r\n    @FXML\r\n    public  void  GotoTeam(ActionEvent e){\r\n        try {\r\n            boolean flag = DBUtil.getCurrentUserRoom(Session.getUserId());\r\n            if(flag){\r\n                Parent root = FXMLLoader.load(getClass().getResource(\"/com/example/mysticmaze/fxmls/joinDashboard.fxml\"));\r\n                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();\r\n                stage.setResizable(false);\r\n                stage.setTitle(\"Profile\");\r\n                stage.setScene(new Scene(root));\r\n                stage.show();\r\n            }\r\n            else{\r\n                // pop up create or join a room first\r\n            }\r\n        } catch (SQLException ex) {\r\n            throw new RuntimeException(ex);\r\n        } catch (IOException ex) {\r\n            throw new RuntimeException(ex);\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/MysticMaze/MysticMaze/src/main/java/com/example/mysticmaze/controllers/DashboardController.java b/MysticMaze/MysticMaze/src/main/java/com/example/mysticmaze/controllers/DashboardController.java
+--- a/MysticMaze/MysticMaze/src/main/java/com/example/mysticmaze/controllers/DashboardController.java	(revision 1672e048aff0ecd2605edc7cc1ed92e1c2f412a5)
++++ b/MysticMaze/MysticMaze/src/main/java/com/example/mysticmaze/controllers/DashboardController.java	(date 1751234249605)
+@@ -1,5 +1,6 @@
+ package com.example.mysticmaze.controllers;
+ 
++import com.example.mysticmaze.network.GameClient;
+ import com.example.mysticmaze.utils.DBUtil;
+ import com.example.mysticmaze.utils.Session;
+ import javafx.event.ActionEvent;
+@@ -129,10 +130,23 @@
+         try {
+             boolean flag = DBUtil.getCurrentUserRoom(Session.getUserId());
+             if(flag){
++
++                try {
++                    GameClient client = new GameClient(message -> {
++                        System.out.println("Server: " + message);
++                    });
++                    client.connect("localhost");
++                    //client.send(gson.toJson(new Message("join", "client_user", roomName, "")));
++                } catch (IOException ex) {
++                    //statusLabel.setText("Could not connect to server.");
++                    ex.printStackTrace();
++                    return;
++                }
++
+                 Parent root = FXMLLoader.load(getClass().getResource("/com/example/mysticmaze/fxmls/joinDashboard.fxml"));
+                 Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                 stage.setResizable(false);
+-                stage.setTitle("Profile");
++                stage.setTitle("Room DashBoard");
+                 stage.setScene(new Scene(root));
+                 stage.show();
+             }

@@ -51,13 +51,13 @@
 
             <HBox alignment="CENTER" spacing="5.0">
                <Label text="New here?" textFill="#e0e0e0" />
-               <Button style="-fx-background-color: transparent; -fx-text-fill: #ffdd57;" text="Register" underline="true" />
+               <Button onAction="#register" style="-fx-background-color: transparent; -fx-text-fill: #ffdd57;" text="Register" underline="true" />
             </HBox>
          </children>
       </VBox>
 
       <!-- Back Button -->
-      <Button layoutX="51.0" layoutY="72.0" onAction="#handleBack" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-font-size: 14;" text="← Return">
+      <Button layoutX="51.0" layoutY="72.0" onAction="#handleBack" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-font-size: 14; -fx-cursor: hand;" text="← Return">
          <effect>
             <Glow level="0.3" />
          </effect>

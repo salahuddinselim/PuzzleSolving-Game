@@ -1,18 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="507.0" prefWidth="749.0" style="-fx-background-color: linear-gradient(to bottom, #1e0033, #3c0066);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.HelpController">
 
-<AnchorPane prefHeight="513.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.HelpController">
    <children>
-      <ImageView fitHeight="513.0" fitWidth="761.0" layoutX="-7.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="507.0" fitWidth="807.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/log.png" />
          </image>
       </ImageView>
-      <Button layoutX="94.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleBack" style="-fx-background-color: transparent;" text="back" textFill="#e1dada" />
+
+
+      <Label layoutX="96.0" layoutY="50.0" prefHeight="38.0" prefWidth="611.0" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #ff00ff, 8, 0.5, 0, 0);" text="✨ Need Help? Let's Begin the Mystic Journey ✨" textFill="#ffffff">
+         <font>
+            <Font name="Papyrus" size="26.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="133.0" layoutY="150.0" prefHeight="27.0" prefWidth="562.0" style="-fx-font-size: 18px;" text="1. Register your name to mark your presence in the Mystic Maze." textFill="#ffd700">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="133.0" layoutY="200.0" prefHeight="27.0" prefWidth="486.0" style="-fx-font-size: 18px;" text="2. Login to your account and unlock your player profile." textFill="#00ffcc">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="130.0" layoutY="250.0" prefHeight="27.0" prefWidth="505.0" style="-fx-font-size: 18px;" text="3. Join a team — because riddles are more fun with allies!" textFill="#ff69b4">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="130.0" layoutY="300.0" prefHeight="27.0" prefWidth="555.0" style="-fx-font-size: 18px;" text="4. Begin the journey and unveil the secrets hidden in the maze..." textFill="#90ee90">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Label>
+
+      <Label layoutX="246.0" layoutY="400.0" prefHeight="32.0" prefWidth="285.0" style="-fx-font-size: 22px; -fx-font-style: italic;" text="Mystic Maze Awaits You... ✨" textFill="#ffffff">
+         <font>
+            <Font name="Georgia" size="22.0" />
+         </font>
+      </Label>
    </children>
+   <!-- Back Button with Glowy Design -->
+   <Button layoutX="51.0" layoutY="72.0" onAction="#handleBack"
+           text="← Return"
+           style="
+            -fx-background-color: rgba(255, 255, 255, 0.08);
+            -fx-text-fill: #ffffff;
+            -fx-font-size: 16;
+            -fx-font-weight: bold;
+            -fx-padding: 8 16;
+            -fx-background-radius: 10;
+            -fx-cursor: hand;
+            -fx-effect: dropshadow(gaussian, #ffffffAA, 10, 0.5, 0, 0);">
+      <effect>
+         <Glow level="0.6" />
+      </effect>
+   </Button>
+
 </AnchorPane>

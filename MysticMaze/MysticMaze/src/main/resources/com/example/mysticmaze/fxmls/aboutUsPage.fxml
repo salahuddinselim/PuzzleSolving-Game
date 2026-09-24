@@ -21,7 +21,7 @@
       </ImageView>
 
       <!-- Glassmorphic pane -->
-      <VBox alignment="TOP_CENTER" layoutX="200.0" layoutY="120.0" prefWidth="500.0" spacing="20.0" style="-fx-background-color: rgba(255,255,255,0.08); -fx-background-radius: 20; -fx-padding: 30;">
+      <VBox alignment="CENTER" layoutX="135.0" layoutY="120.0" prefHeight="268.0" prefWidth="500.0" spacing="20.0" style="-fx-background-color: rgba(255,255,255,0.08); -fx-background-radius: 20; -fx-padding: 30;">
          <effect>
             <DropShadow color="#00000088" radius="15.0" />
          </effect>
@@ -44,10 +44,20 @@
          </children>
       </VBox>
 
-      <!-- Back Button -->
-      <Button layoutX="40.0" layoutY="30.0" onAction="#handleBack" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-font-size: 14;" text="← Back">
+      <!-- Back Button with Glowy Design -->
+      <Button layoutX="51.0" layoutY="72.0" onAction="#handleBack"
+              text="← Return"
+              style="
+            -fx-background-color: rgba(255, 255, 255, 0.08);
+            -fx-text-fill: #ffffff;
+            -fx-font-size: 16;
+            -fx-font-weight: bold;
+            -fx-padding: 8 16;
+            -fx-background-radius: 10;
+            -fx-cursor: hand;
+            -fx-effect: dropshadow(gaussian, #ffffffAA, 10, 0.5, 0, 0);">
          <effect>
-            <Glow level="0.3" />
+            <Glow level="0.6" />
          </effect>
       </Button>
 

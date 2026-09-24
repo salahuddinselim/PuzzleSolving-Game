@@ -1,6 +1,4 @@
 target/
-.idea/
-*.iml
 hs_err_pid*
 *.class
 **/.mvn/wrapper/maven-wrapper.jar

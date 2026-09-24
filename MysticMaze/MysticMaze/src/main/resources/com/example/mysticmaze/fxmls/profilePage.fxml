@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="503.0" prefWidth="755.0" style="-fx-background-color: #2e2e2e;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.ProfilePageController">
+
+    <!-- Background -->
+    <ImageView fitHeight="503.0" fitWidth="755.0" preserveRatio="false">
+        <image>
+            <Image url="@../images/log.png" />
+        </image>
+    </ImageView>
+
+    <!-- Profile Content -->
+    <VBox alignment="TOP_CENTER" layoutX="50.0" layoutY="80.0" prefWidth="650.0" spacing="20.0">
+        <children>
+            <Label alignment="CENTER" prefHeight="91.0" prefWidth="183.0" style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;" text="My Profile">
+                <font>
+                    <Font name="System Bold" size="32.0" />
+                </font>
+            </Label>
+
+            <HBox alignment="CENTER" spacing="30.0">
+                <children>
+                    <!-- Left Info -->
+                    <VBox alignment="CENTER_LEFT" prefHeight="221.0" prefWidth="275.0" spacing="10.0">
+                        <children>
+                            <Label fx:id="usernameLabel" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="Username" />
+                            <Label fx:id="emailLabel" style="-fx-text-fill: white; -fx-font-size: 16px;" text="Email" />
+                            <Label fx:id="userIdLabel" style="-fx-text-fill: white; -fx-font-size: 16px;" text="User ID" />
+                        </children>
+                    </VBox>
+
+                    <!-- Profile Image -->
+                    <VBox alignment="CENTER" spacing="10.0">
+                        <children>
+                            <ImageView fx:id="profileImageView" fitHeight="150.0" fitWidth="209.0" preserveRatio="true" smooth="true" style="-fx-border-color: white; -fx-border-width: 2; -fx-border-radius: 75;" />
+                            <Button fx:id="uploadPhotoBtn" onAction="#handlePhotoUpload" style="-fx-background-radius: 12; -fx-background-color: linear-gradient(#662d91, #a066d1); -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Upload Photo" />
+      
+                            <Button fx:id="savePhotoBtn" onAction="#handleSavePhoto" style="-fx-background-radius: 12; -fx-background-color: linear-gradient(#00897b, #00bfa5); -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="Save to Database" />
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+
+      <!-- Back Button with Glowy Design -->
+      <Button layoutX="85.0" layoutY="60.0" onAction="#handleBack" style="             -fx-background-color: rgba(255, 255, 255, 0.08);             -fx-text-fill: #ffffff;             -fx-font-size: 16;             -fx-font-weight: bold;             -fx-padding: 8 16;             -fx-background-radius: 10;             -fx-cursor: hand;             -fx-effect: dropshadow(gaussian, #ffffffAA, 10, 0.5, 0, 0);" text="← Return">
+          <effect>
+              <Glow level="0.6" />
+          </effect>
+      </Button>
+</AnchorPane>

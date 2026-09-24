@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.demo5.HelloController">
+
+    <HBox spacing="20" alignment="CENTER" prefWidth="800" prefHeight="400"
+          AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+        <!-- Game Rods -->
+        <HBox spacing="30" alignment="BOTTOM_CENTER">
+            <Pane fx:id="rod1" onMouseClicked="#onRodClicked" prefWidth="150" prefHeight="300"
+                  style="-fx-border-color: black; -fx-background-color: white;" />
+            <Pane fx:id="rod2" onMouseClicked="#onRodClicked" prefWidth="150" prefHeight="300"
+                  style="-fx-border-color: black; -fx-background-color: white;" />
+            <Pane fx:id="rod3" onMouseClicked="#onRodClicked" prefWidth="150" prefHeight="300"
+                  style="-fx-border-color: black; -fx-background-color: white;" />
+        </HBox>
+
+        <!-- Right Panel for Rules and Stats -->
+        <VBox spacing="15" alignment="TOP_LEFT" prefWidth="300">
+            <Label text="Game Rules:" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+            <Text wrappingWidth="280" text="1. Only one disk can be moved at a time.
+2. Only the top disk can be moved.
+3. No disk may be placed on a smaller disk.
+4. Move all disks to Rod 2 to win." />
+
+            <Separator />
+
+            <Label text="Moves:" style="-fx-font-weight: bold;" />
+            <Label fx:id="moveCountLabel" text="0" />
+
+            <Label text="Time Elapsed:" style="-fx-font-weight: bold;" />
+            <Label fx:id="timerLabel" text="0 sec" />
+        </VBox>
+    </HBox>
+
+</AnchorPane>

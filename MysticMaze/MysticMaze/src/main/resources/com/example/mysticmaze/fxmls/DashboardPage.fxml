@@ -1,17 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="513.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.DashboardController">
+<AnchorPane prefHeight="503.0" prefWidth="755.0" style="-fx-background-image: url('../images/background.png');" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mysticmaze.controllers.DashboardController">
+
    <children>
       <ImageView fitHeight="513.0" fitWidth="761.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/log.png" />
+            <Image url="@../images/background.png" />
          </image>
       </ImageView>
-      <Button layoutX="98.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleBack" style="-fx-background-color: transparent;" text="Back" textFill="#eee8e8" />
+
+      <VBox layoutX="85.0" layoutY="115.0" opacity="0.94" prefHeight="160.0" prefWidth="344.0" spacing="20.0">
+         <children>
+            <Label style="-fx-font-size: 43px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #a076f9, 12, 0.7, 0, 0);" text="Mystic Maze" textAlignment="CENTER" textFill="#ffffff">
+               <font>
+                  <Font name="System Bold" size="43.0" />
+               </font>
+            </Label>
+
+            <Label style="-fx-font-size: 14px; -fx-effect: dropshadow(gaussian, #b4aee8, 4, 0.5, 0, 0);" text="Enter the Maze. Solve the Riddles. Unlock the Exit – Together." textFill="#f6f0f0" />
+
+            <HBox spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#CreateTeam" prefHeight="36.0" prefWidth="98.0" style="-fx-background-radius: 12; -fx-background-color: linear-gradient(#662d91, #a066d1); -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-font-style: italic; -fx-font-size: 12px; -fx-effect: dropshadow(gaussian, #aa78f5, 6, 0.8, 0, 2); -fx-cursor: hand;" text="Create Team" textAlignment="JUSTIFY" />
+
+                  <Button mnemonicParsing="false" onAction="#JoinTeam" prefHeight="36.0" prefWidth="100.0" style="-fx-background-radius: 12; -fx-background-color: linear-gradient(#2e0059, #7a3adf); -fx-text-fill: #ffffff; -fx-font-size: 12px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #a48de3, 6, 0.8, 0, 2); -fx-cursor: hand;" text="Join team" textAlignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#GotoTeam" prefHeight="35.0" prefWidth="85.0" style="-fx-background-radius: 12; -fx-background-color: linear-gradient(#662d91, #a066d1); -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-font-style: italic; -fx-font-size: 12px; -fx-effect: dropshadow(gaussian, #aa78f5, 6, 0.8, 0, 2); -fx-cursor: hand;" text="My Team" textAlignment="JUSTIFY" />
+
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+      <!-- Footer HBox Placeholder -->
+      <HBox layoutX="123.0" layoutY="458.0" prefHeight="31.0" prefWidth="495.0" spacing="40.0" style="-fx-cursor: hand;" />
+
+      <!-- Navigation Buttons Top Right -->
+      <HBox layoutX="423.0" layoutY="30.0" prefHeight="31.0" prefWidth="309.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: transparent; -fx-text-fill: #f8f8f8;  -fx-font-weight: bold; -fx-cursor: hand;" text="Home" />
+
+            <Button mnemonicParsing="false" onAction="#Help" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: transparent; -fx-text-fill: #f0f0f0;-fx-font-weight: bold; -fx-cursor: hand;" text="Help" />
+            <Button fx:id="welcomeLabel" mnemonicParsing="false" onAction="#ProfilePage" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-font-size: 13px; -fx-cursor: hand; -fx-padding: 0;" text="Welcome, User" />
+
+            <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: linear-gradient(#7a3adf, #2e0059); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 12; -fx-cursor: hand;" text="Logout" />
+         </children>
+      </HBox>
+
+      <!-- Bottom Buttons -->
+      <Button alignment="BOTTOM_CENTER" layoutX="76.0" layoutY="426.0" mnemonicParsing="false" onAction="#AboutUs" prefHeight="55.0" prefWidth="78.0" style="-fx-background-color: transparent; -fx-text-fill: #f5f2ba; -fx-font-weight: bold; -fx-cursor: hand;" text="About Us" />
+
+      <Button alignment="BOTTOM_CENTER" layoutX="200.0" layoutY="419.0" mnemonicParsing="false" onAction="#Player" prefHeight="64.0" prefWidth="66.0" style="-fx-background-color: transparent; -fx-text-fill: #f4f8b5;-fx-font-weight: bold; -fx-cursor: hand;" text="Player" />
+
+      <Button alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="420.0" mnemonicParsing="false" onAction="#GiftBox" prefHeight="64.0" prefWidth="66.0" style="-fx-background-color: transparent; -fx-text-fill: #f4f9bb;               -fx-font-weight: bold; -fx-cursor: hand;" text="GiftBox" />
+
+      <Button alignment="BOTTOM_CENTER" layoutX="458.0" layoutY="420.0" mnemonicParsing="false" onAction="#LeaderBoard" prefHeight="64.0" prefWidth="96.0" style="-fx-background-color: transparent; -fx-text-fill: #f0f6b1;-fx-font-weight: bold; -fx-cursor: hand;" text="LeaderBoard" />
+
+      <Button alignment="BOTTOM_CENTER" layoutX="595.0" layoutY="419.0" mnemonicParsing="false" onAction="#Level" prefHeight="64.0" prefWidth="83.0" style="-fx-background-color: transparent; -fx-text-fill: #e7eb85;-fx-font-weight: bold; -fx-cursor: hand;" text="Level" />
    </children>
+
 </AnchorPane>
