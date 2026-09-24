@@ -44,11 +44,39 @@ Mystic Maze is a team-based 2D multiplayer puzzle-hunting game designed to engag
 
 ## Setup Instructions
 
-1. Clone the repository.
-2. Import the project in IntelliJ IDEA.
-3. Setup the MySQL database using provided SQL scripts.
-4. Run the server.
-5. Launch the client.
+### Prerequisites
+- JDK 24 or newer
+- MySQL 8+ or MariaDB (e.g. via XAMPP)
+
+### 1. Create the database
+
+```bash
+mysql -u root -p -e "CREATE DATABASE mysticmaze"
+mysql -u root -p mysticmaze < MysticMaze/MysticMaze/src/main/resources/com/example/mysticmaze/SQL/mysticmaze.sql
+```
+
+By default the game connects to `jdbc:mysql://localhost:3306/mysticmaze` as `root` with an empty password (the XAMPP default). To use different settings, set `MYSTICMAZE_DB_URL`, `MYSTICMAZE_DB_USER` and `MYSTICMAZE_DB_PASSWORD` before running.
+
+### 2. Start the game server (for rooms and chat)
+
+```bash
+cd MysticMaze/MysticMaze
+./mvnw compile
+./mvnw exec:java -Dexec.mainClass=com.example.mysticmaze.network.GameServer
+```
+
+Or run `network/GameServer.java` from IntelliJ. It listens on port **9999**.
+
+### 3. Launch the game
+
+In a second terminal:
+
+```bash
+cd MysticMaze/MysticMaze
+./mvnw javafx:run        # Windows: mvnw.cmd javafx:run
+```
+
+Or run `Main.java` from IntelliJ. Start one game client per player.
 
 ### Conclusion 
 

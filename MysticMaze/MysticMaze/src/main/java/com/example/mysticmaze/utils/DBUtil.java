@@ -11,9 +11,15 @@ import java.sql.*;
 
 public class DBUtil {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/mysticmaze";
-    private static final String USER = "root"; // Replace with your DB username
-    private static final String PASSWORD = ""; // Replace with your DB password
+    // Override with the MYSTICMAZE_DB_URL / _USER / _PASSWORD environment variables
+    private static final String URL = env("MYSTICMAZE_DB_URL", "jdbc:mysql://localhost:3306/mysticmaze");
+    private static final String USER = env("MYSTICMAZE_DB_USER", "root");
+    private static final String PASSWORD = env("MYSTICMAZE_DB_PASSWORD", "");
+
+    private static String env(String name, String fallback) {
+        String value = System.getenv(name);
+        return value != null ? value : fallback;
+    }
 
     static {
         try {
